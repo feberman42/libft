@@ -6,7 +6,7 @@
 /*   By: feberman <feberman@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/07 16:31:40 by feberman          #+#    #+#             */
-/*   Updated: 2023/05/07 18:41:22 by feberman         ###   ########.fr       */
+/*   Updated: 2023/05/07 18:52:19 by feberman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 void	ft_del(void *content)
 {
-	printf("%s deleted")
+	printf("%s deleted\n", (char *)content);
 }
 
 void	testbonus(void)

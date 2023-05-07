@@ -26,6 +26,8 @@ clean:
 
 fclean: clean
 	rm -f $(NAME).a
+	rm -f program
+	rm -f bonus
 
 re: fclean all
 
@@ -36,7 +38,7 @@ bonus: $(OBJS) $(BOBJS)
 	$(CC) $(CFLAGS) -c $< -o $@
 
 test: re
-	$(CC) $(CFLAGS) -I../libft_git test/test.c -o program libft.a
+	$(CC) $(CFLAGS) test.c -o program libft.a
 
 testbonus: fclean bonus
-	$(CC) $(CFLAGS) -I../libft_git test/bonus.c -o bonus libft.a
+	$(CC) $(CFLAGS) bonus.c -o bonus libft.a

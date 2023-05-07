@@ -38,7 +38,7 @@ bonus: $(OBJS) $(BOBJS)
 	$(CC) $(CFLAGS) -c $< -o $@
 
 test: re
-	$(CC) $(CFLAGS) test.c -o program libft.a
+	$(CC) test.c -o program libft.a
 
 testbonus: fclean bonus
-	$(CC) $(CFLAGS) bonus.c -o bonus libft.a
+	$(CC) bonus.c -o bonus libft.a

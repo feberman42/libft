@@ -6,7 +6,7 @@
 /*   By: feberman <feberman@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/07 18:22:00 by feberman          #+#    #+#             */
-/*   Updated: 2023/05/07 18:23:26 by feberman         ###   ########.fr       */
+/*   Updated: 2023/05/07 19:48:07 by feberman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,9 @@
 
 void	ft_lstdelone(t_list *lst, void (*del)(void*))
 {
-	del(lst->content);
-	free(lst);
+	if (lst != 0)
+	{
+		del(lst->content);
+		free(lst);
+	}
 }

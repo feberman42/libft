@@ -6,7 +6,7 @@
 /*   By: feberman <feberman@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/07 16:31:40 by feberman          #+#    #+#             */
-/*   Updated: 2023/05/08 13:12:10 by feberman         ###   ########.fr       */
+/*   Updated: 2023/05/08 13:31:25 by feberman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,18 @@
 void	ft_del(void *content)
 {
 	printf("%s deleted\n", (char *)content);
+}
+
+void	ft_f(void *content)
+{
+	char	*str = (char *)content;
+	int		i = 0;
+
+	while (str[i] != '\0')
+	{
+		str[i] = ft_toupper(str[i]);
+		i++;
+	}
 }
 
 void	testbonus(void)
@@ -37,7 +49,13 @@ void	testbonus(void)
 	printf("\nLSTDELONE\nTest yourself!\n");
 	printf("\nLSTCLEAR\nDelete whole list:\n");
 	ft_lstclear(&lst, ft_del);
-	
+	char	hello[] = "Hello";
+	char	world[] = "world";
+	lst = ft_lstnew(hello);
+	ft_lstadd_back(&lst, ft_lstnew(world));
+	ft_lstiter(lst, ft_f);
+	printf("\nLSTITER\nCapitalize Hello World: %s %s\n",
+		(char *)lst->content, (char *)lst->next->content);	
 }
 
 int	main(void)

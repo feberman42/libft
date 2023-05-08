@@ -6,7 +6,7 @@
 /*   By: feberman <feberman@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/07 16:31:40 by feberman          #+#    #+#             */
-/*   Updated: 2023/05/08 13:31:25 by feberman         ###   ########.fr       */
+/*   Updated: 2023/05/08 15:10:29 by feberman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,18 @@ void	ft_f(void *content)
 	}
 }
 
+void	*ft_ft(void *content)
+{
+	char	*str = (char *)content;
+	int		len = ft_strlen(str);
+	char	*out = malloc(len + 1);
+	if (out == 0)
+		return (0);
+	ft_strlcpy(out, str, len + 1);
+	ft_f(out);
+	return (out);
+}
+
 void	testbonus(void)
 {
 	t_list	*lst = ft_lstnew("Hello");
@@ -51,11 +63,16 @@ void	testbonus(void)
 	ft_lstclear(&lst, ft_del);
 	char	hello[] = "Hello";
 	char	world[] = "world";
-	lst = ft_lstnew(hello);
+	char	test[] = "test";
+	ft_lstadd_back(&lst, ft_lstnew(hello));
 	ft_lstadd_back(&lst, ft_lstnew(world));
 	ft_lstiter(lst, ft_f);
 	printf("\nLSTITER\nCapitalize Hello World: %s %s\n",
-		(char *)lst->content, (char *)lst->next->content);	
+		(char *)lst->content, (char *)lst->next->content);
+	ft_lstadd_back(&lst, ft_lstnew(test));
+	t_list	*nlst = ft_lstmap(lst, ft_ft, free);
+	printf("\nLSTMAP\nCapitaliye erverything: %s %s %s\n",
+		(char *)nlst->content, (char *)nlst->next->content, (char *)nlst->next->next->content);
 }
 
 int	main(void)

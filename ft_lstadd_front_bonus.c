@@ -6,7 +6,7 @@
 /*   By: feberman <feberman@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/07 17:21:36 by feberman          #+#    #+#             */
-/*   Updated: 2023/05/07 18:06:44 by feberman         ###   ########.fr       */
+/*   Updated: 2023/05/08 14:38:55 by feberman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,9 @@
 
 void	ft_lstadd_front(t_list **lst, t_list *new)
 {
-	new->next = *lst;
-	*lst = new;
+	if (new != 0)
+	{
+		new->next = *lst;
+		*lst = new;
+	}
 }

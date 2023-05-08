@@ -6,7 +6,7 @@
 /*   By: feberman <feberman@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/08 12:48:45 by feberman          #+#    #+#             */
-/*   Updated: 2023/05/08 13:08:15 by feberman         ###   ########.fr       */
+/*   Updated: 2023/05/08 14:28:16 by feberman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,5 +21,6 @@ void	ft_lstclear(t_list **lst, void (*del)(void*))
 		ft_lstclear(&((*lst)->next), del);
 		ft_lstdelone(*lst, del);
 	}
+	*lst = 0;
 	lst = 0;
 }

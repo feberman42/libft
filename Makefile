@@ -15,7 +15,7 @@ BSRCS = ft_lstnew_bonus.c ft_lstadd_front_bonus.c ft_lstsize_bonus.c ft_lstlast_
 OBJS = $(SRCS:.c=.o)
 BOBJS = $(BSRCS:.c=.o)
 
-.PHONY: all clean fclean re bonus test
+.PHONY: all clean fclean re bonus
 
 all: $(NAME)
 
@@ -26,9 +26,7 @@ clean:
 	rm -f *.o
 
 fclean: clean
-	rm -f $(NAME).a
-	rm -f program
-	rm -f bonus
+	rm -f $(NAME).
 
 re: fclean all
 
@@ -37,9 +35,3 @@ bonus: $(OBJS) $(BOBJS)
 
 %.o: %.c libft.h
 	$(CC) $(CFLAGS) -c $< -o $@
-
-test: re
-	$(CC) test.c -o program libft.a
-
-testbonus: fclean bonus
-	$(CC) bonus.c -o bonus libft.a

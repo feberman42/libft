@@ -22,6 +22,8 @@ static int	ft_number_size(long int nbr)
 		size++;
 		nbr *= -1;
 	}
+	if (nbr == 0)
+		return (1);
 	while (nbr > 0)
 	{
 		nbr /= 10;

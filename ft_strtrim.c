@@ -40,10 +40,10 @@ char	*ft_strtrim(char const *s1, char const *set)
 		sub_start++;
 	while (ft_instr(set, s1[sub_end]) == 1 && sub_end >= 0)
 		sub_end--;
-	if (sub_start >= sub_end)
+	if (sub_start > sub_end)
 		sublen = 0;
 	else
-		sublen = sub_end - sub_start;
+		sublen = sub_end - sub_start + 1;
 	sub = malloc(sublen + 1);
 	if (sub == 0)
 		return (sub);

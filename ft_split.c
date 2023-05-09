@@ -19,6 +19,8 @@ static int	ft_word_count(char const *str, char c)
 
 	word_count = 0;
 	i = 0;
+	if (str == 0)
+		return (0);
 	while (str[i] != '\0')
 	{
 		if (str[i] == c)

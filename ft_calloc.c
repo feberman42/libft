@@ -6,7 +6,7 @@
 /*   By: feberman <feberman@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/07 13:58:48 by feberman          #+#    #+#             */
-/*   Updated: 2023/05/07 14:05:41 by feberman         ###   ########.fr       */
+/*   Updated: 2023/05/10 14:20:13 by feberman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,15 +18,10 @@ void	*ft_calloc(size_t nmemb, size_t size)
 	void	*out;
 
 	if (nmemb == 0 || size == 0)
+		return (malloc(0));
+	s = nmemb * size;
+	if (s / size != nmemb)
 		return (0);
-	s = 0;
-	while (nmemb > 0)
-	{
-		s += size;
-		if (s < size)
-			return (0);
-		nmemb--;
-	}
 	out = malloc(s);
 	if (out == 0)
 		return (0);

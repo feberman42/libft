@@ -1,4 +1,4 @@
-NAME = libft
+NAME = libft.a
 
 CC = cc
 CFLAGS = -Wall -Werror -Wextra
@@ -15,23 +15,23 @@ BSRCS = ft_lstnew_bonus.c ft_lstadd_front_bonus.c ft_lstsize_bonus.c ft_lstlast_
 OBJS = $(SRCS:.c=.o)
 BOBJS = $(BSRCS:.c=.o)
 
-.PHONY: all clean fclean re bonus
-
 all: $(NAME)
 
 $(NAME): $(OBJS)
-	ar rcs $(NAME).a $(OBJS)
+	ar rcs $(NAME) $(OBJS)
 
 clean:
 	rm -f *.o
 
 fclean: clean
-	rm -f $(NAME).a
+	rm -f $(NAME)
 
 re: fclean all
 
 bonus: $(OBJS) $(BOBJS)
-	ar rcs $(NAME).a $(OBJS) $(BOBJS)
+	ar rcs $(NAME) $(OBJS) $(BOBJS)
 
 %.o: %.c libft.h
 	$(CC) $(CFLAGS) -c $< -o $@
+
+.PHONY: all clean fclean re bonus

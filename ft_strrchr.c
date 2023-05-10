@@ -6,7 +6,7 @@
 /*   By: feberman <feberman@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/05 17:28:24 by feberman          #+#    #+#             */
-/*   Updated: 2023/05/05 17:32:15 by feberman         ###   ########.fr       */
+/*   Updated: 2023/05/10 12:40:24 by feberman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@ char	*ft_strrchr(const char *s, int c)
 {
 	int	i;
 
+	c = (unsigned char)c;
 	i = ft_strlen(s);
 	while (i >= 0)
 	{

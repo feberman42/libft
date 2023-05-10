@@ -6,7 +6,7 @@
 /*   By: feberman <feberman@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/03 16:09:07 by feberman          #+#    #+#             */
-/*   Updated: 2023/05/03 19:15:31 by feberman         ###   ########.fr       */
+/*   Updated: 2023/05/10 14:36:33 by feberman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,8 +48,8 @@ static int	ft_word_len(const char *str, char end)
 static int	ft_split_words(const char *s, const char c, char **split, int wc)
 {
 	int	i;
-	int	j;
 	int	word;
+	int	wordlen;
 
 	word = 0;
 	i = 0;
@@ -57,28 +57,23 @@ static int	ft_split_words(const char *s, const char c, char **split, int wc)
 	{
 		while (s[i] == c)
 			i++;
-		split[word] = malloc(ft_word_len(s + i, c) + 1);
+		wordlen = ft_word_len(s + i, c);
+		split[word] = malloc(wordlen + 1);
 		if (split[word] == 0)
 			return (0);
-		j = 0;
-		while (s[i] != c && s[i] != '\0')
-		{
-			split[word][j] = s[i];
-			i++;
-			j++;
-		}
-		split[word][i] = '\0';
+		ft_strlcpy(split[word], s + i, wordlen + 1);
+		i += wordlen;
 		word++;
 	}
 	return (1);
 }
 
-static void	ft_free_split(char **split)
+static void	ft_free_split(char **split, int len)
 {
 	int	i;
 
 	i = 0;
-	while (split[i] != 0)
+	while (i < len)
 	{
 		free(split[i]);
 		i++;
@@ -98,7 +93,7 @@ char	**ft_split(char const *s, char c)
 	split[word_count] = 0;
 	if (ft_split_words(s, c, split, word_count) != 1)
 	{
-		ft_free_split(split);
+		ft_free_split(split, word_count);
 		return (0);
 	}
 	return (split);

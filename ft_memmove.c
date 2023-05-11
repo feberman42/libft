@@ -6,7 +6,7 @@
 /*   By: feberman <feberman@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/03 12:11:49 by feberman          #+#    #+#             */
-/*   Updated: 2023/05/11 11:59:39 by feberman         ###   ########.fr       */
+/*   Updated: 2023/05/11 12:14:45 by feberman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,16 +19,13 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 	size_t				i;
 
 	if (dest == 0 && src == 0)
-			return (0);
+		return (0);
 	p_dest = dest;
 	p_src = src;
 	if (p_dest > p_src)
 	{
-		while (n > 0)
-		{
-			p_dest[n - 1] = p_src[n - 1];
-			n--;
-		}
+		while (n-- > 0)
+			p_dest[n] = p_src[n];
 	}
 	else
 	{

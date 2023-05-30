@@ -6,11 +6,12 @@
 /*   By: feberman <feberman@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/16 18:55:20 by feberman          #+#    #+#             */
-/*   Updated: 2023/05/27 12:24:18 by feberman         ###   ########.fr       */
+/*   Updated: 2023/05/30 12:05:09 by feberman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include "ft_printf.h"
 
 int	ft_numlen(long long num, char *flags, int precision)
 {

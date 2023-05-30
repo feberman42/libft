@@ -6,11 +6,12 @@
 /*   By: feberman <feberman@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/15 14:39:32 by feberman          #+#    #+#             */
-/*   Updated: 2023/05/27 12:23:06 by feberman         ###   ########.fr       */
+/*   Updated: 2023/05/30 12:02:35 by feberman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include "ft_printf.h"
 
 int	ft_convert_id(char *flags, int width, int precision, va_list args)
 {

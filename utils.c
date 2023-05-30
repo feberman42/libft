@@ -6,11 +6,12 @@
 /*   By: feberman <feberman@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/13 16:20:09 by feberman          #+#    #+#             */
-/*   Updated: 2023/05/27 12:23:53 by feberman         ###   ########.fr       */
+/*   Updated: 2023/05/30 12:04:37 by feberman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include "ft_printf.h"
 
 int	ft_charin(char c, char *set)
 {

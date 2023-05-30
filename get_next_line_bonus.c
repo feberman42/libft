@@ -6,11 +6,15 @@
 /*   By: feberman <feberman@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/21 11:57:08 by feberman          #+#    #+#             */
-/*   Updated: 2023/05/27 12:29:20 by feberman         ###   ########.fr       */
+/*   Updated: 2023/05/30 11:46:59 by feberman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+char	*ft_substr_gnl(char const *s, unsigned int start, size_t len);
+int		ft_line_complete(char *line);
+char	*ft_join(char *s1, char *s2);
 
 char	*ft_get_line_from_buffer(char *buffer)
 {
@@ -29,7 +33,7 @@ char	*ft_get_line_from_buffer(char *buffer)
 			while (buffer[i + j] != '\n' && buffer[i + j] != -1 \
 				&& i + j < BUFFER_SIZE)
 				j++;
-			out = ft_substr(buffer + i, 0, j + 1);
+			out = ft_substr_gnl(buffer + i, 0, j + 1);
 			if (out == 0)
 				return (0);
 			j += i;

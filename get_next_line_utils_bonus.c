@@ -12,16 +12,6 @@
 
 #include "libft.h"
 
-int	ft_strlen(const char *s)
-{
-	int	i;
-
-	i = 0;
-	while (s[i] != '\0')
-		i++;
-	return (i);
-}
-
 void	*ft_free(char *s1, char *s2)
 {
 	if (s1 != 0)
@@ -78,7 +68,7 @@ int	ft_line_complete(char *line)
 	return (0);
 }
 
-char	*ft_substr(char const *s, unsigned int start, size_t len)
+char	*ft_substr_gnl(char const *s, unsigned int start, size_t len)
 {
 	char	*sub;
 	size_t	i;
